@@ -7,6 +7,7 @@ shell = sh.replace('\\u', '')
 shell = shell.decode('hex')
 shell = ''.join([shell[i+1] + shell[i] for i in range(0, len(shell), 2)]).encode('hex')
 print shell
+shell = shell.decode('hex')
 with open('shell', 'w') as f:
     f.write(shell)
 
